@@ -1,0 +1,49 @@
+@import "@/shared/styles/_vars";
+
+.inputWrapper {
+  width: 100%;
+}
+.label {
+  @include p-mini();
+  color: #fff;
+}
+
+.input {
+  margin-top: 5px;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 100%;
+  @include paragraph-1920();
+  padding: 1rem 1.5rem;
+  outline: none;
+  border: none;
+
+  &::-webkit-input-placeholder {
+    color: $dark-gray;
+  }
+
+  &::-moz-placeholder {
+    color: $dark-gray;
+  }
+
+  &:-ms-input-placeholder {
+    color: $dark-gray;
+  }
+
+  &::-ms-input-placeholder {
+    color: $dark-gray;
+  }
+
+  &::placeholder {
+    color: $dark-gray;
+  }
+}
+
+@media (max-width: $max-768) {
+  .label {
+    display: none;
+  }
+  .input {
+    @include paragraph-mobile();
+  }
+}

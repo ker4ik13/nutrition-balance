@@ -1,0 +1,153 @@
+@import "@/shared/styles/_vars";
+
+.postHeader {
+  background-color: $black;
+  padding-top: em(110);
+  padding-bottom: em(50);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 1/1;
+    top: em(110);
+    right: 0;
+    z-index: 0;
+    background: rgba(37, 163, 226, 0.27);
+    -webkit-filter: blur(200px);
+    filter: blur(200px);
+  }
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: rem(50);
+  position: relative;
+  z-index: 2;
+}
+.linkString {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: rem(5);
+  color: $gray;
+  @include p-mini();
+
+  & a {
+    color: $gray;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.dateFirst {
+  color: $white;
+  @include p-mini();
+  margin-top: rem(50);
+  display: none;
+}
+.postTitle {
+  margin-top: rem(100);
+  @include H1-1920();
+  color: $white;
+  text-wrap: balance;
+}
+.postFooter {
+  margin-top: rem(100);
+  padding-top: rem(15);
+  border-top: rem(1) solid $light-white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $light-white;
+  @include p-mini();
+}
+.postInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(30);
+}
+.infoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(7.25);
+  color: $light-white;
+  @include p-mini();
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.icon {
+  height: rem(20);
+  aspect-ratio: 1/1;
+  width: 100%;
+  color: transparent;
+  fill: transparent;
+  position: relative;
+
+  & path {
+    stroke: $light-white;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  //   TODO: доделать active
+  &.active {
+    &::before {
+      content: "";
+      background-color: $accent1;
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 10px;
+      height: 10px;
+      z-index: 1;
+      border-radius: 50px;
+    }
+  }
+}
+.buttonShare {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@media (max-width: $max-768) {
+  .postTitle {
+    @include H1-mobile();
+  }
+}
+@media (max-width: $max-768) {
+  .linkString {
+    font-size: rem(14);
+  }
+}
+@media (max-width: $max-450) {
+  .postInfo {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .dateSecond {
+    display: none;
+  }
+  .dateFirst {
+    display: block;
+  }
+  .postTitle {
+    margin-top: rem(30);
+  }
+  .postFooter {
+    margin-top: rem(50);
+  }
+}

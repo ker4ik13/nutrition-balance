@@ -1,0 +1,104 @@
+@import "@/shared/styles/_vars";
+
+.postPage {
+}
+.post {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin: rem(100) 0;
+}
+.content {
+  width: 100%;
+  color: $black;
+  max-width: rem(850);
+}
+.text {
+  width: 100%;
+  color: $black;
+
+  & p {
+    @include paragraph-1920();
+    margin: rem(20) 0;
+  }
+
+  & span {
+    @include photo-desc();
+    color: $gray;
+  }
+
+  & h3 {
+    @include H3-1920();
+    margin: rem(25) 0;
+  }
+
+  & ul {
+    margin: rem(25) 0;
+  }
+
+  & li {
+    @include paragraph-1920();
+    margin: rem(5) 0;
+
+    &::marker {
+      color: $accent1;
+      font-size: rem(28);
+    }
+  }
+
+  & img {
+    margin: rem(25) 0;
+    width: 100%;
+    border-radius: rem(8);
+  }
+
+  & a {
+    color: $accent1;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.title {
+  color: $black;
+  margin-bottom: rem(75);
+  text-align: left;
+  text-wrap: pretty;
+}
+
+@media (max-width: $max-768) {
+  .post {
+    margin: rem(50) 0;
+    flex-direction: column;
+    gap: rem(50);
+  }
+  .title {
+    margin-top: 0;
+    margin-bottom: rem(30);
+  }
+  .text {
+    & h3 {
+      @include H3-mobile();
+      margin: rem(15) 0;
+    }
+    & p {
+      @include paragraph-mobile();
+      margin: rem(10) 0;
+    }
+
+    & li {
+      @include paragraph-mobile();
+
+      &::marker {
+        font-size: rem(20);
+      }
+    }
+
+    & span {
+      font-size: rem(14);
+    }
+  }
+}

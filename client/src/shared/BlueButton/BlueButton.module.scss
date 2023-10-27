@@ -1,0 +1,30 @@
+@import "@/shared/styles/_vars";
+
+.blueButton {
+  background-color: $accent1;
+  font-size: 1.25rem;
+  padding: 1.25rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.625rem;
+  color: $white;
+  cursor: pointer;
+  transition: 0.1s linear;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: darken($accent1, 5%);
+  }
+}
+
+@media (max-width: $max-768) {
+  .blueButton {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+  }
+}

@@ -1,0 +1,97 @@
+@import "@/shared/styles/_vars";
+
+.post {
+  max-width: rem(650);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(20);
+  flex: 1 0 50%;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    .postTitle {
+      text-decoration: underline;
+    }
+  }
+}
+.img {
+  width: 100%;
+  aspect-ratio: 1.7/1;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: clamp(rem(20), 5vw, rem(40));
+  max-height: rem(380);
+}
+.content {
+  display: flex;
+  row-gap: rem(20);
+  flex-direction: column;
+}
+.postTitle {
+  @include H3-1920();
+  color: $gray;
+}
+.postDescription {
+  @include paragraph-1920();
+  color: $black;
+}
+.postDate {
+  font-size: rem(20);
+  line-height: 1.2;
+  font-weight: 400;
+  color: $gray;
+}
+
+@media (max-width: $max-1400) {
+  .post {
+    max-width: rem(550);
+  }
+}
+@media (max-width: $max-1200) {
+  .post {
+    max-width: rem(450);
+  }
+}
+@media (max-width: $max-1000) {
+  .post {
+    max-width: rem(650);
+  }
+}
+@media (max-width: $max-768) {
+  .content {
+    row-gap: rem(15);
+  }
+  .postTitle {
+    @include H3-mobile();
+  }
+  .postDescription {
+    @include paragraph-mobile();
+  }
+  .postDate {
+    font-size: rem(12);
+  }
+  .post {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: rem(-30);
+      width: 100%;
+      height: rem(1);
+      background-color: $light-white;
+      border-radius: 50px;
+    }
+
+    &:last-child::after {
+      height: 0;
+    }
+  }
+}
+@media (max-width: $max-650) {
+  .img {
+    max-height: rem(160);
+  }
+}

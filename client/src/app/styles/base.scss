@@ -1,0 +1,22 @@
+@import "@/shared/styles/_vars";
+
+html {
+  // color-scheme: light dark;
+  font-family: "Inter Variable";
+}
+body.overflow {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 95.625rem; // 1530px
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+@media (max-width: $max-1200) {
+  .container {
+    padding: 0 15px;
+  }
+}

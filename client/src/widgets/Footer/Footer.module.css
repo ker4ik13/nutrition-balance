@@ -1,0 +1,52 @@
+.footer {
+  padding: 100px 0;
+  background: #151515;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 65px;
+}
+
+.developers {
+  display: flex;
+  gap: 35px;
+}
+
+.developer {
+  font-size: 15px;
+  position: relative;
+  color: #8C8C8C;
+}
+.developer a {
+  color: #8C8C8C;
+  text-decoration: none;
+}
+.developer a:hover {
+  text-decoration: underline;
+}
+.developer::before {
+  content: "";
+  position: absolute;
+  left: -17px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 15px;
+  background-color: #8C8C8C;
+}
+.developer:first-child::before {
+  content: "";
+  width: 0;
+  height: 0;
+}

@@ -1,0 +1,174 @@
+@import "@/shared/styles/_vars";
+
+.formPage {
+  background-color: #151515;
+  padding: 150px 0;
+}
+.wrapper {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.formTitle {
+  color: #fff;
+}
+.description {
+  margin-top: 3.125rem;
+  @include paragraph-1920();
+  color: #fff;
+  text-align: center;
+  line-height: 1.7;
+}
+.form {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.string {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.checkbox {
+  width: 1.25rem;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+  background-color: #8c8c8c;
+  accent-color: #8c8c8c;
+  border: 1px solid #8c8c8c;
+}
+.checkboxLabel {
+  color: #8c8c8c;
+  @include p-mini();
+}
+.labelLink {
+  color: inherit;
+
+  &:hover {
+    color: lighten(#8c8c8c, 20%);
+  }
+}
+.checkboxWrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.buttonWrapper {
+  margin-top: 50px;
+  width: 100%;
+}
+.inputWrapper {
+  width: 100%;
+}
+.label {
+  @include p-mini();
+  color: #fff;
+}
+.error {
+  font-size: 1rem;
+  color: red;
+  margin-top: rem(5);
+  cursor: text;
+}
+
+.input {
+  margin-top: 5px;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 100%;
+  @include paragraph-1920();
+  padding: 1rem 1.5rem;
+  outline: none;
+  border: none;
+
+  &::-webkit-input-placeholder {
+    color: $dark-gray;
+  }
+
+  &::-moz-placeholder {
+    color: $dark-gray;
+  }
+
+  &:-ms-input-placeholder {
+    color: $dark-gray;
+  }
+
+  &::-ms-input-placeholder {
+    color: $dark-gray;
+  }
+
+  &::placeholder {
+    color: $dark-gray;
+  }
+}
+.textarea {
+  margin-top: 5px;
+  min-height: 250px;
+  resize: none;
+  background-color: #fff;
+  @include paragraph-1920();
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+
+  &::-webkit-input-placeholder {
+    color: $dark-gray;
+  }
+
+  &::-moz-placeholder {
+    color: $dark-gray;
+  }
+
+  &:-ms-input-placeholder {
+    color: $dark-gray;
+  }
+
+  &::-ms-input-placeholder {
+    color: $dark-gray;
+  }
+
+  &::placeholder {
+    color: $dark-gray;
+  }
+}
+
+@media (max-width: $max-768) {
+  .textarea {
+    @include paragraph-mobile();
+  }
+  .label {
+    display: none;
+  }
+  .input {
+    @include paragraph-mobile();
+  }
+  .formPage {
+    padding: 50px 0;
+  }
+  .title {
+    @include H2-mobile();
+  }
+  .description {
+    margin-top: 1.875rem;
+    @include paragraph-mobile();
+    text-align: left;
+  }
+  .form {
+    margin-top: 1.875rem;
+    gap: 20px;
+  }
+  .string {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .buttonWrapper {
+    margin-top: 1.875rem;
+  }
+}

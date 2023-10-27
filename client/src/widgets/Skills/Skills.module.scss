@@ -1,0 +1,79 @@
+@import "@/shared/styles/_vars";
+
+.skillsPage {
+  padding: 150px 0;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skills {
+  margin-top: 6.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+  row-gap: 3.125rem;
+  width: 100%;
+  -moz-column-gap: 2rem;
+  column-gap: 8rem;
+}
+.skill {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.skillTitle {
+  @include paragraph-1920();
+  white-space: nowrap;
+}
+.dots {
+  display: flex;
+  gap: 0.625rem;
+  flex-wrap: nowrap;
+}
+.activeDot {
+  width: 1.56rem;
+  aspect-ratio: 1/1;
+  border-radius: 50px;
+  background-color: $accent1;
+}
+.dot {
+  width: 1.56rem;
+  aspect-ratio: 1/1;
+  border-radius: 50px;
+  background-color: $accent1;
+  opacity: 0.4;
+}
+
+@media (max-width: $max-1100) {
+  .skills {
+    grid-template-columns: 1fr;
+  }
+  .skill {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: $max-768) {
+  .skillsPage {
+    padding: 50px 0;
+  }
+  .skills {
+    margin-top: 1.875rem;
+  }
+  .skillTitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: $max-400) {
+  .activeDot {
+    width: 1rem;
+  }
+  .dot {
+    width: 1rem;
+  }
+}
