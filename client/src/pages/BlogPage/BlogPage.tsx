@@ -1,4 +1,4 @@
-import HelloScreen from "@/widgets/HelloScreen/HelloScreen";
+import HelloScreen from "@/widgets/HelloScreen";
 import styles from "./BlogPage.module.scss";
 import Title from "@/shared/Title/Title";
 import Post from "@/widgets/Post/Post";
@@ -23,7 +23,7 @@ const BlogPage = () => {
   return (
     <div className={styles.blogPage}>
       <HelloScreen />
-      <div className='container'>
+      <div className="container">
         <div className={styles.wrapper}>
           <Title text={"Мой блог"} />
           <div className={styles.posts}>
@@ -34,7 +34,7 @@ const BlogPage = () => {
           </div>
           {showPosts < allPosts.length && (
             <button
-              type='button'
+              type="button"
               className={styles.showMoreButton}
               onClick={showMorePosts}
             >

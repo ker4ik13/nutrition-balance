@@ -1,4 +1,4 @@
-import HelloScreen from "@/widgets/HelloScreen/HelloScreen";
+import HelloScreen from "@/widgets/HelloScreen";
 import styles from "./WorksPage.module.scss";
 import Title from "@/shared/Title/Title";
 import { works } from "@/data/works";
@@ -13,7 +13,7 @@ const WorksPage = () => {
   return (
     <div className={styles.worksPage}>
       <HelloScreen />
-      <div className='container'>
+      <div className="container">
         <Title text={"Мои работы"} className={styles.title} />
         <div className={styles.works}>
           {works.map((work, index) => (
@@ -25,7 +25,7 @@ const WorksPage = () => {
                 // TODO: доделать пагинацию
                 return (
                   <button
-                    type='button'
+                    type="button"
                     className={`${styles.button} ${isActive(index)}`}
                     key={index}
                     onClick={() => setPagination(index + 1)}

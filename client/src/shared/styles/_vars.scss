@@ -1,8 +1,11 @@
 @use "sass:math";
+
 // Colors
 $accent1: #178af5;
 
-$white: #fafafa;
+$shadow1: #f28c6b;
+
+$white: #ffffff;
 $white-bg: #f6f6f6;
 $light-white: #e2e2e2;
 $shadow: #eff2ff;
@@ -121,6 +124,11 @@ $dark-gray: #494949;
   &:hover {
     color: darken($accent1, 10%);
   }
+}
+
+@mixin gilroy($weight) {
+  font-family: "Gilroy";
+  font-weight: $weight;
 }
 
 // Convert
