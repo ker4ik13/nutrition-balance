@@ -1,0 +1,32 @@
+@use "sass:math";
+
+$green: #81bc3d;
+$white: #fff;
+
+@function rem($px) {
+  $result: math.div($px, 16) + rem;
+  @return $result;
+}
+@function em($px) {
+  $result: math.div($px, 16) + em;
+  @return $result;
+}
+
+// Responsive
+
+$max-1400: em(1400);
+$max-1300: em(1300);
+$max-1200: em(1200);
+$max-1100: em(1100);
+$max-1000: em(1000);
+$max-950: em(950);
+$max-900: em(900);
+$max-800: em(800);
+$max-768: em(768);
+$max-700: em(700);
+$max-650: em(650);
+$max-600: em(600);
+$max-550: em(550);
+$max-500: em(500);
+$max-450: em(450);
+$max-400: em(400);
